@@ -1,0 +1,12 @@
+version: '1.0'
+services:
+  webapp: 
+    build:
+      context: .
+      args:
+        - PORT=${PORTEXPOSED}
+    ports:
+      - '${PORTEXPOSED}:${PORTEXPOSED}'
+    restart: always
+    container_name: fletappcontainer
+    image: jspark6815/webapp:latest
